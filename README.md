@@ -2,7 +2,7 @@ Relationship Building with Mrs M
 
 A responsive, bilingual (English / isiZulu) website built for Thembeka Mkhunu (Mrs M) — Relationship Coach, Qualified Educator, Psychologist (BA (Hons) & Masters in Psychology), and Public Speaker based in Pietermaritzburg, KwaZulu-Natal.
 
-Live Website: https://limstarhshamase.github.io/relationship-building-with-mrsm/ (Update once GitHub Pages is active)
+Live Website: https://relationship-coaching-with-mrsm.vercel.app/
 
 ✨ Key Features
 
