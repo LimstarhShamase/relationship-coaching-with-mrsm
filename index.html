@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relationship Building with Mrs M | Thembeka Mkhunu</title>
+  <meta name="description" content="Relationship coaching, premarital & marital counselling, and personal growth with Thembeka Mkhunu (Mrs M). Sessions available in English and isiZulu." />
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF6F0',
+            creamDark: '#F2EAE0',
+            terracotta: '#9E472A',
+            terracottaDark: '#823820',
+            forest: '#1F3A2E',
+            forestLight: '#2B4E3E',
+            ochre: '#C8963E',
+            charcoal: '#231F20',
+            muted: '#5A5350',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF6F0;
+      color: #231F20;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    /* Subtle organic pattern accent */
+    .earth-dots {
+      background-image: radial-gradient(#C8963E 1.5px, transparent 1.5px);
+      background-size: 16px 16px;
+    }
+
+    /* Smooth range slider styling */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 999px;
+      background: #E6DDD0;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #9E472A;
+      border: 3px solid #FAF6F0;
+      box-shadow: 0 2px 6px rgba(35, 31, 32, 0.25);
+      margin-top: -8px;
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
+
+    /* Hide scrollbar for review slider */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-ochre/30 selection:text-charcoal pb-20 md:pb-0">
+
+  <!-- =========================================================
+       1. STICKY TOP NAVIGATION + EN / isiZULU PILL TOGGLE
+  ========================================================== -->
+  <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b border-charcoal/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-3">
+      <!-- Brand -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-forest text-cream flex items-center justify-center font-serif font-bold text-lg shadow-xs group-hover:bg-terracotta transition-colors">
+          M
+        </div>
+        <div class="leading-tight">
+          <span class="block font-serif font-semibold text-base sm:text-lg text-charcoal tracking-tight">Relationship Building</span>
+          <span class="block text-xs font-medium text-terracotta tracking-wide" data-i18n="brandSub">with Mrs M • Thembeka Mkhunu</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-charcoal/85">
+        <a href="#about" class="hover:text-terracotta transition-colors" data-i18n="navAbout">About</a>
+        <a href="#checkin" class="hover:text-terracotta transition-colors" data-i18n="navCheckin">30-Sec Check-In</a>
+        <a href="#services" class="hover:text-terracotta transition-colors" data-i18n="navServices">Services</a>
+        <a href="#gallery" class="hover:text-terracotta transition-colors" data-i18n="navGallery">Gallery</a>
+        <a href="#contact" class="hover:text-terracotta transition-colors" data-i18n="navContact">Contact</a>
+      </nav>
+
+      <!-- Right Actions: Bilingual Pill Toggle & Mobile Menu -->
+      <div class="flex items-center gap-2.5">
+        <!-- Bilingual Pill Toggle -->
+        <div class="inline-flex items-center p-1 rounded-full bg-creamDark border border-charcoal/15 shadow-2xs" role="group" aria-label="Language switcher">
+          <button type="button" id="btnEn" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-forest text-cream shadow-2xs">
+            EN
+          </button>
+          <button type="button" id="btnZu" onclick="setLanguage('zu')" class="px-3 py-1.5 rounded-full text-xs font-bold transition-all text-charcoal/75 hover:text-charcoal">
+            isiZulu
+          </button>
+        </div>
+
+        <a href="https://wa.me/27844162803" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-terracotta hover:bg-terracottaDark text-cream text-xs font-semibold transition-colors">
+          <span data-i18n="navCta">Book a Session</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button type="button" id="mobileMenuBtn" aria-label="Open menu" class="lg:hidden w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-creamDark">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-cream border-t border-charcoal/10 px-6 py-5 space-y-3 shadow-lg">
+      <a href="#about" class="mobile-nav-link block py-2 font-medium text-charcoal hover:text-terracotta" data-i18n="navAbout">About</a>
+      <a href="#checkin" class="mobile-nav-link block py-2 font-medium text-charcoal hover:text-terracotta" data-i18n="navCheckin">30-Sec Check-In</a>
+      <a href="#services" class="mobile-nav-link block py-2 font-medium text-charcoal hover:text-terracotta" data-i18n="navServices">Services</a>
+      <a href="#gallery" class="mobile-nav-link block py-2 font-medium text-charcoal hover:text-terracotta" data-i18n="navGallery">Gallery</a>
+      <a href="#contact" class="mobile-nav-link block py-2 font-medium text-charcoal hover:text-terracotta" data-i18n="navContact">Contact</a>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       2. HERO SECTION (USES hero-image.jpg)
+  ========================================================== -->
+  <section class="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <!-- Left Editorial Copy -->
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest/10 text-forest border border-forest/20 text-xs font-bold tracking-wide uppercase mb-5">
+          <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+          <span data-i18n="heroBadge">Relationship Coach • Public Speaker</span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-semibold leading-[1.1] text-charcoal" data-i18n="heroTitle">
+          Healthy relationships begin with understanding yourself and each other.
+        </h1>
+
+        <p class="mt-5 text-base sm:text-lg text-muted leading-relaxed max-w-xl" data-i18n="heroSub">
+          Grounded, confidential guidance for couples and individuals across South Africa. Whether you are preparing for marriage, rebuilding trust, or seeking personal clarity, Mrs M walks beside you without judgement.
+        </p>
+
+        <!-- Primary & Secondary CTAs -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-3.5 max-w-lg">
+          <a href="#checkin" class="py-4 px-7 rounded-full bg-terracotta hover:bg-terracottaDark text-cream font-semibold text-sm sm:text-[15px] text-center shadow-sm transition-all flex items-center justify-center gap-2">
+            <span data-i18n="heroPrimaryCta">Start 30-Sec Check-In</span>
+            <span>→</span>
+          </a>
+
+          <a href="https://wa.me/27844162803?text=Sawubona%20Mrs%20M%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20enquire%20about%20a%20session." target="_blank" rel="noopener" class="py-4 px-7 rounded-full bg-forest hover:bg-forestLight text-cream font-semibold text-sm sm:text-[15px] text-center shadow-sm transition-all flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+            </svg>
+            <span data-i18n="heroWhatsappCta">Chat on WhatsApp • 084 416 2803</span>
+          </a>
+        </div>
+
+        <!-- Trust Strip -->
+        <div class="mt-8 pt-6 border-t border-charcoal/10 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-muted">
+          <div class="flex items-center gap-1.5 font-semibold text-charcoal">
+            <span class="text-ochre text-base">★★★★★</span>
+            <span data-i18n="trustRating">5.0 Google Rating</span>
+          </div>
+          <span>•</span>
+          <span data-i18n="trustLang">isiZulu &amp; English Sessions</span>
+          <span>•</span>
+          <span data-i18n="trustMode">In-Person (PMB) &amp; Online</span>
+        </div>
+      </div>
+
+      <!-- Right Arched Portrait Frame (hero-image.jpg) -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-full max-w-[360px]">
+          <div class="earth-dots w-28 h-28 absolute -bottom-5 -left-5 -z-10 opacity-70"></div>
+          <div class="absolute inset-0 translate-x-3 translate-y-3 rounded-t-full bg-ochre/25 -z-10"></div>
+
+          <div class="relative aspect-[3/3.8] w-full rounded-t-full overflow-hidden border-4 border-white shadow-xl bg-creamDark">
+            <img
+              src="hero-image.jpg"
+              alt="Thembeka Mkhunu - Mrs M Relationship Coach"
+              class="w-full h-full object-cover object-top"
+              onerror="handleImgFallback(this, 'hero-image.jpg', 'Thembeka Mkhunu (Mrs M)')"
+            />
+          </div>
+
+          <!-- Floating Credential Pill -->
+          <div class="absolute -bottom-4 right-2 sm:-right-4 bg-forest text-cream px-4 py-2.5 rounded-2xl shadow-lg border border-ochre/30">
+            <p class="font-serif text-sm font-semibold">Thembeka Mkhunu</p>
+            <p class="text-[11px] text-ochre font-medium" data-i18n="heroCardSub">Masters in Psychology • Educator</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3. ABOUT / STORY SECTION (USES 2nd page image.jpg)
+  ========================================================== -->
+  <section id="about" class="py-16 md:py-24 bg-creamDark/60 border-y border-charcoal/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <!-- Image Column (2nd page image.jpg) -->
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <div class="relative rounded-3xl overflow-hidden shadow-lg border-4 border-white bg-creamDark aspect-[4/4.6]">
+          <img
+            src="2nd page image.jpg"
+            alt="Mrs M speaking at an intimate couples workshop"
+            class="w-full h-full object-cover"
+            onerror="handleImgFallback(this, '2nd page image.jpg', 'Mrs M Speaking at Workshop')"
+          />
+          <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-charcoal/85 via-charcoal/40 to-transparent text-cream">
+            <p class="text-xs font-medium text-ochre uppercase tracking-wider" data-i18n="aboutPhotoTag">Safe, Judgment-Free Dialogue</p>
+            <p class="text-sm font-serif" data-i18n="aboutPhotoCaption">Guiding couples and individuals with warmth and depth.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story & Qualifications Column -->
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-terracotta" data-i18n="aboutEyebrow">Meet Your Coach</span>
+        <h2 class="mt-2 font-serif text-3xl sm:text-4xl lg:text-[42px] font-semibold leading-tight text-charcoal" data-i18n="aboutTitle">
+          Academic depth paired with real-world South African warmth.
+        </h2>
+
+        <p class="mt-5 text-base text-muted leading-relaxed" data-i18n="aboutP1">
+          Thembeka Mkhunu — affectionately known as Mrs M — brings together formal psychological training and years of experience as an educator and public speaker. She understands the cultural, family, and emotional dynamics that shape modern South African relationships.
+        </p>
+        <p class="mt-4 text-base text-muted leading-relaxed" data-i18n="aboutP2">
+          Her sessions offer a calm, confidential space where couples and individuals can speak honestly, unpack painful patterns, and build practical communication tools that last.
+        </p>
+
+        <!-- Qualifications Grid -->
+        <div class="mt-7 grid sm:grid-cols-2 gap-3.5">
+          <div class="p-4 rounded-2xl bg-cream border border-charcoal/10 flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-terracotta/15 text-terracotta flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+            <div>
+              <h3 class="font-semibold text-sm text-charcoal" data-i18n="qual1Title">Masters in Psychology</h3>
+              <p class="text-xs text-muted mt-0.5" data-i18n="qual1Sub">Evidence-informed emotional &amp; relational insight</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-cream border border-charcoal/10 flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-terracotta/15 text-terracotta flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+            <div>
+              <h3 class="font-semibold text-sm text-charcoal" data-i18n="qual2Title">BA (Hons) Psychology</h3>
+              <p class="text-xs text-muted mt-0.5" data-i18n="qual2Sub">Deep understanding of human behaviour &amp; healing</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-cream border border-charcoal/10 flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-forest/15 text-forest flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+            <div>
+              <h3 class="font-semibold text-sm text-charcoal" data-i18n="qual3Title">Qualified Educator</h3>
+              <p class="text-xs text-muted mt-0.5" data-i18n="qual3Sub">Structured, practical tools you can apply daily</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-cream border border-charcoal/10 flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-forest/15 text-forest flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+            <div>
+              <h3 class="font-semibold text-sm text-charcoal" data-i18n="qual4Title">Public Speaker</h3>
+              <p class="text-xs text-muted mt-0.5" data-i18n="qual4Sub">Radio guest, workshop facilitator &amp; community voice</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4. INTERACTIVE "30-SECOND CHECK-IN" SECTION (3 STEPS)
+  ========================================================== -->
+  <section id="checkin" class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-xl mx-auto">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-ochre/20 text-terracotta text-xs font-bold uppercase tracking-wider" data-i18n="checkinEyebrow">
+          Interactive Self-Reflection
+        </span>
+        <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-semibold text-charcoal" data-i18n="checkinTitle">
+          30-Second Relationship Check-In
+        </h2>
+        <p class="mt-2.5 text-sm sm:text-base text-muted" data-i18n="checkinSub">
+          Answer three quick questions to receive a tailored reflection and send your check-in directly to Mrs M on WhatsApp.
+        </p>
+      </div>
+
+      <!-- Check-In Card -->
+      <div class="mt-8 rounded-3xl bg-white border border-charcoal/10 shadow-md p-6 sm:p-9">
+        <!-- Progress Bar -->
+        <div class="flex items-center justify-between text-xs font-bold text-muted mb-3">
+          <span id="stepIndicator" data-i18n="step1Label">Step 1 of 3</span>
+          <button type="button" id="resetCheckinBtn" onclick="resetCheckIn()" class="hidden text-terracotta underline underline-offset-2" data-i18n="startOver">
+            Start over
+          </button>
+        </div>
+        <div class="w-full h-2 rounded-full bg-creamDark overflow-hidden mb-7">
+          <div id="progressBar" class="h-full bg-terracotta transition-all duration-300 w-1/3"></div>
+        </div>
+
+        <!-- STEP 1: Who is this for? -->
+        <div id="checkStep1">
+          <h3 class="font-serif text-2xl text-charcoal" data-i18n="q1Title">1. Who is this check-in for?</h3>
+          <div class="mt-5 grid sm:grid-cols-3 gap-3.5">
+            <button type="button" onclick="chooseStep1('myself')" class="p-5 rounded-2xl border-2 border-charcoal/10 hover:border-terracotta bg-cream/50 text-left transition-all group">
+              <span class="block font-serif text-lg font-semibold text-charcoal group-hover:text-terracotta" data-i18n="q1Opt1">Myself</span>
+              <span class="block text-xs text-muted mt-1" data-i18n="q1Opt1Sub">Personal healing, clarity &amp; self-awareness</span>
+            </button>
+
+            <button type="button" onclick="chooseStep1('relationship')" class="p-5 rounded-2xl border-2 border-charcoal/10 hover:border-terracotta bg-cream/50 text-left transition-all group">
+              <span class="block font-serif text-lg font-semibold text-charcoal group-hover:text-terracotta" data-i18n="q1Opt2">My Relationship</span>
+              <span class="block text-xs text-muted mt-1" data-i18n="q1Opt2Sub">Dating, married, or navigating conflict together</span>
+            </button>
+
+            <button type="button" onclick="chooseStep1('marriage')" class="p-5 rounded-2xl border-2 border-charcoal/10 hover:border-terracotta bg-cream/50 text-left transition-all group">
+              <span class="block font-serif text-lg font-semibold text-charcoal group-hover:text-terracotta" data-i18n="q1Opt3">Preparing for Marriage</span>
+              <span class="block text-xs text-muted mt-1" data-i18n="q1Opt3Sub">Building a strong foundation before saying "I do"</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Current emotional weather / focus area -->
+        <div id="checkStep2" class="hidden">
+          <h3 class="font-serif text-2xl text-charcoal" data-i18n="q2Title">2. What is your current emotional weather or focus area?</h3>
+          <div class="mt-5 grid sm:grid-cols-2 gap-3.5">
+            <button type="button" onclick="chooseStep2('comm')" class="p-4 rounded-2xl border-2 border-charcoal/10 hover:border-terracotta bg-cream/50 text-left transition-all">
+              <span class="block font-semibold text-charcoal" data-i18n="q2Opt1">Communication &amp; Conflict</span>
+              <span class="block text-xs text-muted mt-1" data-i18n="q2Opt1Sub">Feeling unheard, recurring arguments, or tension</span>
+            </button>
+
+            <button type="button" onclick="chooseStep2('intimacy')" class="p-4 rounded-2xl border-2 border-charcoal/10 hover:border-terracotta bg-cream/50 text-left transition-all">
+              <span class="block font-semibold text-charcoal" data-i18n="q2Opt2">Intimacy &amp; Connection</span>
+              <span class="block text-xs text-muted mt-1" data-i18n="q2Opt2Sub">Emotional distance, trust, or couple's intimacy</span>
+            </button>
+
+            <button type="button" onclick="chooseStep2('healing')" class="p-4 rounded-2xl border-2 border-charcoal/10 hover:border-terracotta bg-cream/50 text-left transition-all">
+              <span class="block font-semibold text-charcoal" data-i18n="q2Opt3">Self-Discovery &amp; Healing</span>
+              <span class="block text-xs text-muted mt-1" data-i18n="q2Opt3Sub">Unpacking past hurt, patterns, and inner peace</span>
+            </button>
+
+            <button type="button" onclick="chooseStep2('readiness')" class="p-4 rounded-2xl border-2 border-charcoal/10 hover:border-terracotta bg-cream/50 text-left transition-all">
+              <span class="block font-semibold text-charcoal" data-i18n="q2Opt4">Marriage Readiness</span>
+              <span class="block text-xs text-muted mt-1" data-i18n="q2Opt4Sub">Aligning values, finances, family &amp; future goals</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Urgency Slider -->
+        <div id="checkStep3" class="hidden">
+          <h3 class="font-serif text-2xl text-charcoal" data-i18n="q3Title">3. How urgent does support feel right now?</h3>
+          <div class="mt-6 p-5 rounded-2xl bg-cream border border-charcoal/10">
+            <div class="flex justify-between text-xs font-bold text-muted mb-3">
+              <span data-i18n="urgLow">Exploring / Proactive</span>
+              <span data-i18n="urgMed">Need Guidance Soon</span>
+              <span data-i18n="urgHigh">Heavy / Urgent</span>
+            </div>
+            <input id="urgencySlider" type="range" min="1" max="3" step="1" value="2" class="w-full" oninput="updateUrgencyLabel(this.value)" />
+            <p id="urgencySelectedText" class="mt-4 text-center font-serif text-lg font-semibold text-terracotta" data-i18n="urgMedDesc">
+              Moderate — Ready for clarity and structured support soon.
+            </p>
+          </div>
+
+          <button type="button" onclick="finishCheckIn()" class="mt-6 w-full py-4 px-6 rounded-full bg-forest hover:bg-forestLight text-cream font-semibold text-sm sm:text-base transition-colors">
+            <span data-i18n="seeReflectionBtn">See My Reflection →</span>
+          </button>
+        </div>
+
+        <!-- RESULT VIEW -->
+        <div id="checkResult" class="hidden">
+          <div class="p-6 rounded-2xl bg-forest text-cream">
+            <span class="inline-block px-3 py-1 rounded-full bg-ochre text-charcoal text-xs font-bold uppercase tracking-wider" data-i18n="resultBadge">
+              Your Personalised Reflection
+            </span>
+            <h3 id="resultHeading" class="mt-3 font-serif text-2xl sm:text-3xl font-semibold"></h3>
+            <p id="resultBody" class="mt-3 text-sm sm:text-base text-cream/90 leading-relaxed"></p>
+            <div class="mt-4 pt-4 border-t border-cream/15 text-xs text-ochre font-semibold" id="resultSummaryLine"></div>
+          </div>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a id="sendCheckinWhatsapp" href="#" target="_blank" rel="noopener" class="flex-1 py-4 px-6 rounded-full bg-terracotta hover:bg-terracottaDark text-cream font-semibold text-sm text-center shadow-sm transition-colors flex items-center justify-center gap-2">
+              <span data-i18n="sendWhatsappBtn">Send My Check-In to Mrs M on WhatsApp</span>
+            </a>
+            <button type="button" onclick="resetCheckIn()" class="py-4 px-6 rounded-full border border-charcoal/25 text-charcoal font-semibold text-sm hover:bg-creamDark transition-colors" data-i18n="retakeBtn">
+              Retake Check-In
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. SERVICES SECTION (3 CLEAR PILLARS WITH ICONS)
+  ========================================================== -->
+  <section id="services" class="py-16 md:py-24 bg-forest text-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-ochre" data-i18n="servicesEyebrow">How We Work Together</span>
+        <h2 class="mt-2 font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-cream" data-i18n="servicesTitle">
+          Three Pillars of Support
+        </h2>
+        <p class="mt-3 text-sm sm:text-base text-cream/80" data-i18n="servicesSub">
+          Confidential one-on-one, couples, and group sessions available in isiZulu and English.
+        </p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <!-- Pillar 1: Couples & Marriage -->
+        <div class="rounded-3xl bg-cream text-charcoal p-7 shadow-lg flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-terracotta/15 text-terracotta flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-charcoal" data-i18n="pillar1Title">Couples &amp; Marriage</h3>
+            <ul class="mt-5 space-y-3 text-sm text-charcoal/90">
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span><span data-i18n="s1_1">Premarital Counselling</span></li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span><span data-i18n="s1_2">Marital Counselling</span></li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span><span data-i18n="s1_3">Marriage Evaluation</span></li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span><span data-i18n="s1_4">Relationship Building</span></li>
+            </ul>
+          </div>
+          <a href="https://wa.me/27844162803?text=Hi%20Mrs%20M%2C%20I%20would%20like%20to%20enquire%20about%20Couples%20%26%20Marriage%20counselling." target="_blank" rel="noopener" class="mt-7 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-terracotta hover:text-terracottaDark" data-i18n="pillarCta">
+            Enquire via WhatsApp →
+          </a>
+        </div>
+
+        <!-- Pillar 2: Workshops & Growth -->
+        <div class="rounded-3xl bg-cream text-charcoal p-7 shadow-lg flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-ochre/20 text-terracotta flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-charcoal" data-i18n="pillar2Title">Workshops &amp; Growth</h3>
+            <ul class="mt-5 space-y-3 text-sm text-charcoal/90">
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-ochre"></span><span data-i18n="s2_1">Self-Discovery &amp; Self-Awareness Programmes</span></li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-ochre"></span><span data-i18n="s2_2">Couples Workshops</span></li>
+            </ul>
+            <p class="mt-4 text-xs text-muted leading-relaxed" data-i18n="pillar2Note">
+              Interactive group dialogues and structured programmes designed for lasting self-awareness and shared growth.
+            </p>
+          </div>
+          <a href="https://wa.me/27844162803?text=Hi%20Mrs%20M%2C%20I%20would%20like%20to%20enquire%20about%20Workshops%20%26%20Growth%20programmes." target="_blank" rel="noopener" class="mt-7 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-terracotta hover:text-terracottaDark" data-i18n="pillarCta">
+            Enquire via WhatsApp →
+          </a>
+        </div>
+
+        <!-- Pillar 3: Personal & Intimacy Coaching -->
+        <div class="rounded-3xl bg-cream text-charcoal p-7 shadow-lg flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-forest/15 text-forest flex items-center justify-center mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-charcoal" data-i18n="pillar3Title">Personal &amp; Intimacy Coaching</h3>
+            <ul class="mt-5 space-y-3 text-sm text-charcoal/90">
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-forest"></span><span data-i18n="s3_1">Individual Coaching</span></li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-forest"></span><span data-i18n="s3_2">Communication Skills Training</span></li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-forest"></span><span data-i18n="s3_3">Conflict Resolution</span></li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-forest"></span><span data-i18n="s3_4">Couples Sex Therapy</span></li>
+            </ul>
+          </div>
+          <a href="https://wa.me/27844162803?text=Hi%20Mrs%20M%2C%20I%20would%20like%20to%20enquire%20about%20Personal%20%26%20Intimacy%20Coaching." target="_blank" rel="noopener" class="mt-7 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-terracotta hover:text-terracottaDark" data-i18n="pillarCta">
+            Enquire via WhatsApp →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. MOMENTS & GALLERY SECTION ("IN ACTION")
+          Uses gallery-image1.jpg, gallery-image2.jpg, gallery-image3.jpg
+  ========================================================== -->
+  <section id="gallery" class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-terracotta" data-i18n="galleryEyebrow">In Action</span>
+          <h2 class="mt-2 font-serif text-3xl sm:text-4xl font-semibold text-charcoal" data-i18n="galleryTitle">
+            Moments &amp; Community Dialogue
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-muted" data-i18n="galleryHint">Click any photo to view full screen</p>
+      </div>
+
+      <!-- Editorial Bento / Masonry Grid -->
+      <div class="mt-9 grid md:grid-cols-12 gap-5">
+        <!-- Gallery Image 1 -->
+        <button type="button" onclick="openGalleryLightbox('gallery-image1.jpg', 'cap1')" class="md:col-span-4 group relative rounded-3xl overflow-hidden shadow-md bg-creamDark aspect-[3/4] text-left focus:outline-none">
+          <img
+            src="gallery-image1.jpg"
+            alt="Media & Radio Features with Mrs M"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="handleImgFallback(this, 'gallery-image1.jpg', 'Media & Radio Features')"
+          />
+          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-charcoal/90 via-charcoal/45 to-transparent text-cream">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-ochre">01</span>
+            <p class="font-serif text-lg font-medium mt-0.5" data-i18n="cap1">Media &amp; Radio Features</p>
+          </div>
+        </button>
+
+        <!-- Gallery Image 2 -->
+        <button type="button" onclick="openGalleryLightbox('gallery-image2.jpg', 'cap2')" class="md:col-span-4 group relative rounded-3xl overflow-hidden shadow-md bg-creamDark aspect-[3/4] text-left focus:outline-none">
+          <img
+            src="gallery-image2.jpg"
+            alt="Fireside & Evening Dialogue Sessions"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="handleImgFallback(this, 'gallery-image2.jpg', 'Fireside & Evening Dialogue Sessions')"
+          />
+          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-charcoal/90 via-charcoal/45 to-transparent text-cream">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-ochre">02</span>
+            <p class="font-serif text-lg font-medium mt-0.5" data-i18n="cap2">Fireside &amp; Evening Dialogue Sessions</p>
+          </div>
+        </button>
+
+        <!-- Gallery Image 3 -->
+        <button type="button" onclick="openGalleryLightbox('gallery-image3.jpg', 'cap3')" class="md:col-span-4 group relative rounded-3xl overflow-hidden shadow-md bg-creamDark aspect-[3/4] text-left focus:outline-none">
+          <img
+            src="gallery-image3.jpg"
+            alt="Intimate Couples & Dinner Workshops"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="handleImgFallback(this, 'gallery-image3.jpg', 'Intimate Couples & Dinner Workshops')"
+          />
+          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-charcoal/90 via-charcoal/45 to-transparent text-cream">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-ochre">03</span>
+            <p class="font-serif text-lg font-medium mt-0.5" data-i18n="cap3">Intimate Couples &amp; Dinner Workshops</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7. CLIENT REVIEWS SLIDER
+  ========================================================== -->
+  <section class="py-14 md:py-20 bg-creamDark/70 border-y border-charcoal/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-7">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-terracotta" data-i18n="reviewsEyebrow">Client Stories</span>
+          <h2 class="mt-1 font-serif text-3xl sm:text-4xl font-semibold text-charcoal" data-i18n="reviewsTitle">
+            Trusted by Couples &amp; Individuals
+          </h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" id="prevReviewBtn" aria-label="Previous review" class="w-10 h-10 rounded-full bg-cream border border-charcoal/20 flex items-center justify-center hover:bg-terracotta hover:text-cream transition-colors">←</button>
+          <button type="button" id="nextReviewBtn" aria-label="Next review" class="w-10 h-10 rounded-full bg-cream border border-charcoal/20 flex items-center justify-center hover:bg-terracotta hover:text-cream transition-colors">→</button>
+        </div>
+      </div>
+
+      <div id="reviewsTrack" class="flex gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
+        <article class="snap-start shrink-0 w-[88%] sm:w-[48%] lg:w-[32%] bg-cream rounded-3xl p-7 border border-charcoal/10 shadow-2xs flex flex-col justify-between">
+          <div>
+            <div class="text-ochre text-sm tracking-widest">★★★★★</div>
+            <p class="mt-4 text-sm leading-relaxed text-charcoal/90">
+              “My wife is happy again, she is back to her old self, we are laughing again, it feels like a dream. Mrs M really helped us restore our marriage. The only thing I regret is not coming to her sooner.”
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-charcoal/10">
+            <p class="font-bold text-sm text-charcoal">Sikhulile Mpanza</p>
+            <p class="text-xs text-muted">Google Review</p>
+          </div>
+        </article>
+
+        <article class="snap-start shrink-0 w-[88%] sm:w-[48%] lg:w-[32%] bg-cream rounded-3xl p-7 border border-charcoal/10 shadow-2xs flex flex-col justify-between">
+          <div>
+            <div class="text-ochre text-sm tracking-widest">★★★★★</div>
+            <p class="mt-4 text-sm leading-relaxed text-charcoal/90">
+              “Working with Mrs. M has been a life changer. She helped me develop deeper self-awareness, understand my patterns and see life from a more grounded and balanced perspective.”
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-charcoal/10">
+            <p class="font-bold text-sm text-charcoal">Zinhle Dlamini</p>
+            <p class="text-xs text-muted">Google Review</p>
+          </div>
+        </article>
+
+        <article class="snap-start shrink-0 w-[88%] sm:w-[48%] lg:w-[32%] bg-cream rounded-3xl p-7 border border-charcoal/10 shadow-2xs flex flex-col justify-between">
+          <div>
+            <div class="text-ochre text-sm tracking-widest">★★★★★</div>
+            <p class="mt-4 text-sm leading-relaxed text-charcoal/90">
+              “Mrs M is one of the best life coaches I’ve interacted with. She is amazing, very empathic and professional. My sessions with her truly helped me move forward with life.”
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-charcoal/10">
+            <p class="font-bold text-sm text-charcoal">Samke Radebe</p>
+            <p class="text-xs text-muted">Google Review</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8. CONTACT & FOOTER
+  ========================================================== -->
+  <section id="contact" class="py-16 md:py-24 bg-charcoal text-cream">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-ochre/20 text-ochre text-xs font-bold tracking-wider uppercase" data-i18n="contactLangNote">
+        Sessions available in isiZulu &amp; English
+      </span>
+
+      <h2 class="mt-4 font-serif text-3xl sm:text-5xl font-semibold text-cream" data-i18n="contactTitle">
+        Ready to take the next step?
+      </h2>
+
+      <p class="mt-4 text-base text-cream/80 max-w-xl mx-auto" data-i18n="contactSub">
+        Reach out via WhatsApp or phone call to schedule a confidential consultation in Pietermaritzburg or online.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto">
+        <a href="https://wa.me/27844162803?text=Sawubona%20Mrs%20M%2C%20I%20would%20like%20to%20book%20a%20session." target="_blank" rel="noopener" class="flex-1 py-4 px-7 rounded-full bg-terracotta hover:bg-terracottaDark text-cream font-semibold text-sm sm:text-base shadow-md transition-colors flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+          </svg>
+          <span data-i18n="contactWhatsapp">WhatsApp 084 416 2803</span>
+        </a>
+
+        <a href="tel:+27844162803" class="flex-1 py-4 px-7 rounded-full bg-cream text-charcoal hover:bg-creamDark font-semibold text-sm sm:text-base shadow-md transition-colors flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+          </svg>
+          <span data-i18n="contactCall">Call 084 416 2803</span>
+        </a>
+      </div>
+
+      <div class="mt-10 pt-8 border-t border-cream/15 grid sm:grid-cols-3 gap-6 text-sm text-cream/75 text-left">
+        <div>
+          <p class="font-serif text-lg text-cream font-semibold">Relationship Building with Mrs M</p>
+          <p class="mt-1 text-xs">Thembeka Mkhunu • Qualified Educator, BA (Hons) Psychology, Masters in Psychology, Public Speaker</p>
+        </div>
+        <div>
+          <p class="font-semibold text-cream" data-i18n="footerHoursTitle">Opening Hours</p>
+          <p class="mt-1 text-xs" data-i18n="footerHours">Mon–Fri: 08:00–17:00 • Sat: 08:00–14:00 • Sun: 08:00–13:00</p>
+        </div>
+        <div>
+          <p class="font-semibold text-cream" data-i18n="footerLocTitle">Location</p>
+          <p class="mt-1 text-xs" data-i18n="footerLoc">Pietermaritzburg, KwaZulu-Natal &amp; Online Nationwide</p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-xs text-cream/50">
+        © 2026 Relationship Building with Mrs M. All rights reserved.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sticky Mobile Bottom Bar -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-charcoal/95 backdrop-blur-md border-t border-cream/15 px-4 py-2.5 grid grid-cols-2 gap-3">
+    <a href="tel:+27844162803" class="py-2.5 rounded-full bg-cream text-charcoal font-bold text-xs text-center" data-i18n="mobileCall">
+      Call 084 416 2803
+    </a>
+    <a href="https://wa.me/27844162803" target="_blank" rel="noopener" class="py-2.5 rounded-full bg-terracotta text-cream font-bold text-xs text-center" data-i18n="mobileWhatsapp">
+      WhatsApp Mrs M
+    </a>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-charcoal/90 backdrop-blur-xs" onclick="closeGalleryLightbox()">
+    <div class="relative max-w-2xl w-full" onclick="event.stopPropagation()">
+      <button type="button" onclick="closeGalleryLightbox()" class="absolute -top-11 right-0 px-3.5 py-1.5 rounded-full bg-cream text-charcoal text-xs font-bold">
+        ✕ Close
+      </button>
+      <img id="lightboxImg" src="" alt="" class="w-full max-h-[78vh] object-contain rounded-2xl bg-charcoal" />
+      <p id="lightboxCaption" class="mt-3 text-center font-serif text-base text-ochre"></p>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       JAVASCRIPT: BILINGUAL ENGINE, 30-SEC CHECK-IN, GALLERY & SLIDER
+  ========================================================== -->
+  <script>
+    /* 1. BILINGUAL DICTIONARY (ENGLISH & CONVERSATIONAL KZN isiZULU) */
+    const translations = {
+      en: {
+        brandSub: "with Mrs M • Thembeka Mkhunu",
+        navAbout: "About",
+        navCheckin: "30-Sec Check-In",
+        navServices: "Services",
+        navGallery: "Gallery",
+        navContact: "Contact",
+        navCta: "Book a Session",
+        heroBadge: "Relationship Coach • Public Speaker",
+        heroTitle: "Healthy relationships begin with understanding yourself and each other.",
+        heroSub: "Grounded, confidential guidance for couples and individuals across South Africa. Whether you are preparing for marriage, rebuilding trust, or seeking personal clarity, Mrs M walks beside you without judgement.",
+        heroPrimaryCta: "Start 30-Sec Check-In",
+        heroWhatsappCta: "Chat on WhatsApp • 084 416 2803",
+        trustRating: "5.0 Google Rating",
+        trustLang: "isiZulu & English Sessions",
+        trustMode: "In-Person (PMB) & Online",
+        heroCardSub: "Masters in Psychology • Educator",
+        aboutPhotoTag: "Safe, Judgment-Free Dialogue",
+        aboutPhotoCaption: "Guiding couples and individuals with warmth and depth.",
+        aboutEyebrow: "Meet Your Coach",
+        aboutTitle: "Academic depth paired with real-world South African warmth.",
+        aboutP1: "Thembeka Mkhunu — affectionately known as Mrs M — brings together formal psychological training and years of experience as an educator and public speaker. She understands the cultural, family, and emotional dynamics that shape modern South African relationships.",
+        aboutP2: "Her sessions offer a calm, confidential space where couples and individuals can speak honestly, unpack painful patterns, and build practical communication tools that last.",
+        qual1Title: "Masters in Psychology",
+        qual1Sub: "Evidence-informed emotional & relational insight",
+        qual2Title: "BA (Hons) Psychology",
+        qual2Sub: "Deep understanding of human behaviour & healing",
+        qual3Title: "Qualified Educator",
+        qual3Sub: "Structured, practical tools you can apply daily",
+        qual4Title: "Public Speaker",
+        qual4Sub: "Radio guest, workshop facilitator & community voice",
+        checkinEyebrow: "Interactive Self-Reflection",
+        checkinTitle: "30-Second Relationship Check-In",
+        checkinSub: "Answer three quick questions to receive a tailored reflection and send your check-in directly to Mrs M on WhatsApp.",
+        step1Label: "Step 1 of 3",
+        step2Label: "Step 2 of 3",
+        step3Label: "Step 3 of 3",
+        startOver: "Start over",
+        q1Title: "1. Who is this check-in for?",
+        q1Opt1: "Myself",
+        q1Opt1Sub: "Personal healing, clarity & self-awareness",
+        q1Opt2: "My Relationship",
+        q1Opt2Sub: "Dating, married, or navigating conflict together",
+        q1Opt3: "Preparing for Marriage",
+        q1Opt3Sub: "Building a strong foundation before saying \"I do\"",
+        q2Title: "2. What is your current emotional weather or focus area?",
+        q2Opt1: "Communication & Conflict",
+        q2Opt1Sub: "Feeling unheard, recurring arguments, or tension",
+        q2Opt2: "Intimacy & Connection",
+        q2Opt2Sub: "Emotional distance, trust, or couple's intimacy",
+        q2Opt3: "Self-Discovery & Healing",
+        q2Opt3Sub: "Unpacking past hurt, patterns, and inner peace",
+        q2Opt4: "Marriage Readiness",
+        q2Opt4Sub: "Aligning values, finances, family & future goals",
+        q3Title: "3. How urgent does support feel right now?",
+        urgLow: "Exploring / Proactive",
+        urgMed: "Need Guidance Soon",
+        urgHigh: "Heavy / Urgent",
+        seeReflectionBtn: "See My Reflection →",
+        resultBadge: "Your Personalised Reflection",
+        sendWhatsappBtn: "Send My Check-In to Mrs M on WhatsApp",
+        retakeBtn: "Retake Check-In",
+        servicesEyebrow: "How We Work Together",
+        servicesTitle: "Three Pillars of Support",
+        servicesSub: "Confidential one-on-one, couples, and group sessions available in isiZulu and English.",
+        pillar1Title: "Couples & Marriage",
+        s1_1: "Premarital Counselling",
+        s1_2: "Marital Counselling",
+        s1_3: "Marriage Evaluation",
+        s1_4: "Relationship Building",
+        pillar2Title: "Workshops & Growth",
+        s2_1: "Self-Discovery & Self-Awareness Programmes",
+        s2_2: "Couples Workshops",
+        pillar2Note: "Interactive group dialogues and structured programmes designed for lasting self-awareness and shared growth.",
+        pillar3Title: "Personal & Intimacy Coaching",
+        s3_1: "Individual Coaching",
+        s3_2: "Communication Skills Training",
+        s3_3: "Conflict Resolution",
+        s3_4: "Couples Sex Therapy",
+        pillarCta: "Enquire via WhatsApp →",
+        galleryEyebrow: "In Action",
+        galleryTitle: "Moments & Community Dialogue",
+        galleryHint: "Click any photo to view full screen",
+        cap1: "Media & Radio Features",
+        cap2: "Fireside & Evening Dialogue Sessions",
+        cap3: "Intimate Couples & Dinner Workshops",
+        reviewsEyebrow: "Client Stories",
+        reviewsTitle: "Trusted by Couples & Individuals",
+        contactLangNote: "Sessions available in isiZulu & English",
+        contactTitle: "Ready to take the next step?",
+        contactSub: "Reach out via WhatsApp or phone call to schedule a confidential consultation in Pietermaritzburg or online.",
+        contactWhatsapp: "WhatsApp 084 416 2803",
+        contactCall: "Call 084 416 2803",
+        footerHoursTitle: "Opening Hours",
+        footerHours: "Mon–Fri: 08:00–17:00 • Sat: 08:00–14:00 • Sun: 08:00–13:00",
+        footerLocTitle: "Location",
+        footerLoc: "Pietermaritzburg, KwaZulu-Natal & Online Nationwide",
+        mobileCall: "Call 084 416 2803",
+        mobileWhatsapp: "WhatsApp Mrs M"
+      },
+      zu: {
+        brandSub: "no-Mrs M • Thembeka Mkhunu",
+        navAbout: "Ngaye",
+        navCheckin: "Ukuzihlola (30-Sec)",
+        navServices: "Izinsiza",
+        navGallery: "Izithombe",
+        navContact: "Xhumana Naye",
+        navCta: "Bhuka Isikhathi",
+        heroBadge: "Umeluleki Wezobudlelwano • Isikhulumi",
+        heroTitle: "Ubudlelwano obunempilo buqala ngokuzazi wena nokwazana nomunye.",
+        heroSub: "Ukwelulekwa okunokuthula nokuyimfihlo kwabashadikazi, izithandani, kanye nabantu ngabanye eNingizimu Afrika. Noma ngabe nilungiselela umshado, nivuselela ukwethembana, noma nifuna ukuthula kwangaphakathi, u-Mrs M uhamba nani ngaphandle kokwahlulela.",
+        heroPrimaryCta: "Qala Ukuzihlola (30-Sec)",
+        heroWhatsappCta: "Xoxa ku-WhatsApp • 084 416 2803",
+        trustRating: "5.0 Ku-Google",
+        trustLang: "Izikhathi ngesiZulu nesiNgisi",
+        trustMode: "E-PMB Naku-Online",
+        heroCardSub: "Masters in Psychology • Uthisha",
+        aboutPhotoTag: "Izingxoxo Eziphephile Nezingenakwahlulela",
+        aboutPhotoCaption: "Ukweluleka izithandani nabantu ngabanye ngemfudumalo nangokujula.",
+        aboutEyebrow: "Yazi Umeluleki Wakho",
+        aboutTitle: "Ulwazi olunzulu lwezemfundo oluhlangene nemfudumalo yaseNingizimu Afrika.",
+        aboutP1: "U-Thembeka Mkhunu — owaziwa kakhulu ngokuthi u-Mrs M — uhlanganisa imfundo ephakeme yezengqondo (Psychology) nesipiliyoni seminyaka enguthisha nesikhulumi somphakathi. Uyaziqonda izimo zamasiko, ezomndeni, nezomphefumulo ezithinta ubudlelwano namuhla.",
+        aboutP2: "Izikhathi zakhe zinikeza indawo ezolile neyimfihlo lapho izithandani nabantu ngabanye bengakhuluma ngokukhululeka, belaphe amanxeba adlule, futhi bafunde izindlela ezakhayo zokuxhumana.",
+        qual1Title: "Masters in Psychology",
+        qual1Sub: "Ukuqonda okujulile kwemizwa nobudlelwano",
+        qual2Title: "BA (Hons) Psychology",
+        qual2Sub: "Ulwazi olujulile lokuziphatha nokuphola kwangaphakathi",
+        qual3Title: "Uthisha Oqeqeshiwe (Qualified Educator)",
+        qual3Sub: "Izindlela ezilula nezisebenzayo zansuku zonke",
+        qual4Title: "Isikhulumi Somphakathi (Public Speaker)",
+        qual4Sub: "Izinhlelo zomsakazo, izithangami nezingxoxo zomphakathi",
+        checkinEyebrow: "Ukuzihlola Okusheshayo",
+        checkinTitle: "Ukuzihlola Kwezobudlelwano Kwemizuzwana Engu-30",
+        checkinSub: "Phendula imibuzo emithathu elula ukuze uthole iseluleko esiqondene nawe bese usithumela ku-Mrs M ku-WhatsApp.",
+        step1Label: "Isinyathelo 1 kwangu-3",
+        step2Label: "Isinyathelo 2 kwangu-3",
+        step3Label: "Isinyathelo 3 kwangu-3",
+        startOver: "Qala kabusha",
+        q1Title: "1. Lokhu kuzihlola okwabani?",
+        q1Opt1: "Mina Ngedwa",
+        q1Opt1Sub: "Ukuphola kwangaphakathi, ukucaciseleka nokuzazi",
+        q1Opt2: "Ubudlelwano Bami",
+        q1Opt2Sub: "Izithandani, abashadile, noma ukuxazulula ukungaboni ngaso linye",
+        q1Opt3: "Ukulungiselela Umshado",
+        q1Opt3Sub: "Ukwakha isisekelo esiqinile ngaphambi kokushada",
+        q2Title: "2. Yini edinga ukunakwa kakhulu okwamanje?",
+        q2Opt1: "Ukuxhumana Nokuxazulula Izingxabano",
+        q2Opt1Sub: "Ukungazwakali, ukuxabana okungapheli, noma ukungezwani",
+        q2Opt2: "Ukusondelana Nokwethembana",
+        q2Opt2Sub: "Ukuqhelelana ngemizwa, ukwethembana, noma ezothando",
+        q2Opt3: "Ukuzazi Nokuphola Kwangaphakathi",
+        q2Opt3Sub: "Ukwelapha ubuhlungu obudlule nokuthola ukuthula",
+        q2Opt4: "Ukulungela Umshado",
+        q2Opt4Sub: "Ukuhlela izimali, umndeni, nezinhloso zekusasa ndawonye",
+        q3Title: "3. Usudinga ngokushesha kangakanani usizo?",
+        urgLow: "Ngisafuna ukwazi kabanzi",
+        urgMed: "Ngidinga iseluleko maduze",
+        urgHigh: "Kuyaphuthuma / Kuyasinda",
+        seeReflectionBtn: "Bona Iseluleko Sami →",
+        resultBadge: "Iseluleko Esiqondene Nawe",
+        sendWhatsappBtn: "Thumela ku-Mrs M ku-WhatsApp",
+        retakeBtn: "Phinda Ukuzihlola",
+        servicesEyebrow: "Indlela Esisebenza Ngayo",
+        servicesTitle: "Izinsika Ezintathu Zosizo",
+        servicesSub: "Izikhathi eziyimfihlo zomuntu oyedwa, izithandani, namaqembu ngesiZulu nesiNgisi.",
+        pillar1Title: "Izithandani Nomshado",
+        s1_1: "Ukwelulekwa Ngaphambi Komshado (Premarital)",
+        s1_2: "Ukwelulekwa Kwabashadile (Marital Counselling)",
+        s1_3: "Ukuhlolwa Kwesimo Somshado (Marriage Evaluation)",
+        s1_4: "Ukwakha Ubudlelwano Obuqinile",
+        pillar2Title: "Izithangami Nokukhula",
+        s2_1: "Izinhlelo Zokuzazi Nokuziqonda",
+        s2_2: "Izithangami Zezithandani (Couples Workshops)",
+        pillar2Note: "Izingxoxo ezakhayo nezinhlelo ezihleliwe zokukhulisa ukuqonda nokuzwana.",
+        pillar3Title: "Ukwelulekwa Komuntu Nokusondelana",
+        s3_1: "Ukwelulekwa Komuntu Ngamunye (Individual Coaching)",
+        s3_2: "Amakhono Okuxhumana Kahle",
+        s3_3: "Ukuxazulula Izingxabano (Conflict Resolution)",
+        s3_4: "Ukwelulekwa Kwezocansi Kwabashadile (Sex Therapy)",
+        pillarCta: "Buza ku-WhatsApp →",
+        galleryEyebrow: "Emsebenzini",
+        galleryTitle: "Izikhathi Nezingxoxo Zomphakathi",
+        galleryHint: "Chofoza isithombe ukuze usibone sisikhulu",
+        cap1: "Izinhlelo Zomsakazo Nabezindaba",
+        cap2: "Izingxoxo Ezakhayo Eziko",
+        cap3: "Izithangami Zezithandani",
+        reviewsEyebrow: "Okushiwo Ngabantu",
+        reviewsTitle: "Basethemba Abashadile Nabantu Ngabanye",
+        contactLangNote: "Izikhathi zitholakala ngesiZulu nesiNgisi",
+        contactTitle: "Usukulungele ukuthatha isinyathelo esilandelayo?",
+        contactSub: "Xhumana no-Mrs M ku-WhatsApp noma ufone ukuze uhlele isikhathi e-Pietermaritzburg noma ku-Online.",
+        contactWhatsapp: "WhatsApp 084 416 2803",
+        contactCall: "Fonela 084 416 2803",
+        footerHoursTitle: "Izikhathi Zokusebenza",
+        footerHours: "Msombuluko–Lwesihlanu: 08:00–17:00 • Mgqibelo: 08:00–14:00 • Sonto: 08:00–13:00",
+        footerLocTitle: "Indawo",
+        footerLoc: "Pietermaritzburg, KwaZulu-Natal Naku-Online Ezweni Lonke",
+        mobileCall: "Fonela 084 416 2803",
+        mobileWhatsapp: "WhatsApp Mrs M"
+      }
+    };
+
+    let currentLang = localStorage.getItem('mrsm_lang') || 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('mrsm_lang', lang);
+      document.documentElement.lang = lang === 'zu' ? 'zu' : 'en';
+
+      // Update toggle pill styles
+      const btnEn = document.getElementById('btnEn');
+      const btnZu = document.getElementById('btnZu');
+      if (lang === 'en') {
+        btnEn.className = 'px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-forest text-cream shadow-2xs';
+        btnZu.className = 'px-3 py-1.5 rounded-full text-xs font-bold transition-all text-charcoal/75 hover:text-charcoal';
+      } else {
+        btnZu.className = 'px-3 py-1.5 rounded-full text-xs font-bold transition-all bg-forest text-cream shadow-2xs';
+        btnEn.className = 'px-3 py-1.5 rounded-full text-xs font-bold transition-all text-charcoal/75 hover:text-charcoal';
+      }
+
+      // Translate all [data-i18n] nodes
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      // Refresh dynamic check-in labels if active
+      updateUrgencyLabel(document.getElementById('urgencySlider').value);
+      if (!document.getElementById('checkResult').classList.contains('hidden')) {
+        renderCheckInResult();
+      }
+    }
+
+    /* 2. MOBILE NAV DRAWER */
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    /* 3. GRACEFUL IMAGE FALLBACK HANDLER */
+    function handleImgFallback(imgEl, filename, label) {
+      const parent = imgEl.parentElement;
+      imgEl.style.display = 'none';
+      const fallback = document.createElement('div');
+      fallback.className = 'w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-ochre/20 via-creamDark to-terracotta/15 text-charcoal';
+      fallback.innerHTML = `
+        <svg class="w-10 h-10 text-terracotta mb-2 opacity-80" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <path d="M21 15l-5-5L5 21"></path>
+        </svg>
+        <p class="font-serif font-semibold text-base">${label}</p>
+        <p class="text-[11px] text-muted mt-1">Place <code class="bg-white/80 px-1.5 py-0.5 rounded">${filename}</code> in the same folder as index.html</p>
+      `;
+      parent.insertBefore(fallback, parent.firstChild);
+    }
+
+    /* 4. 30-SECOND CHECK-IN LOGIC */
+    const checkState = {
+      audience: 'relationship',
+      focus: 'comm',
+      urgency: 2
+    };
+
+    function chooseStep1(audience) {
+      checkState.audience = audience;
+      document.getElementById('checkStep1').classList.add('hidden');
+      document.getElementById('checkStep2').classList.remove('hidden');
+      document.getElementById('resetCheckinBtn').classList.remove('hidden');
+      document.getElementById('progressBar').style.width = '66%';
+      document.getElementById('stepIndicator').textContent = translations[currentLang].step2Label;
+    }
+
+    function chooseStep2(focus) {
+      checkState.focus = focus;
+      document.getElementById('checkStep2').classList.add('hidden');
+      document.getElementById('checkStep3').classList.remove('hidden');
+      document.getElementById('progressBar').style.width = '100%';
+      document.getElementById('stepIndicator').textContent = translations[currentLang].step3Label;
+      updateUrgencyLabel(document.getElementById('urgencySlider').value);
+    }
+
+    function updateUrgencyLabel(val) {
+      checkState.urgency = Number(val);
+      const target = document.getElementById('urgencySelectedText');
+      const labels = {
+        en: {
+          1: "Gentle — Exploring proactive growth and clarity.",
+          2: "Moderate — Ready for structured guidance soon.",
+          3: "Urgent — Carrying a heavy load and needing prompt support."
+        },
+        zu: {
+          1: "Kancane — Ngifuna ukukhula nokucaciseleka ngaphambi kwezinkinga.",
+          2: "Phakathi nendawo — Ngikulungele ukuthola iseluleko maduze.",
+          3: "Kuyaphuthuma — Ngithwele kanzima futhi ngidinga usizo ngokushesha."
+        }
+      };
+      target.textContent = labels[currentLang][checkState.urgency];
+    }
+
+    function finishCheckIn() {
+      document.getElementById('checkStep3').classList.add('hidden');
+      document.getElementById('checkResult').classList.remove('hidden');
+      renderCheckInResult();
+    }
+
+    function renderCheckInResult() {
+      const content = {
+        en: {
+          audMap: { myself: "Myself", relationship: "My Relationship", marriage: "Preparing for Marriage" },
+          focMap: {
+            comm: {
+              title: "Communication & Conflict Resolution",
+              body: "When conversations turn into cycles of hurt or silence, having a neutral, skilled guide changes everything. Mrs M helps you slow down, feel genuinely heard, and replace reactive habits with healthy dialogue."
+            },
+            intimacy: {
+              title: "Intimacy, Trust & Connection",
+              body: "Emotional and physical closeness require safety and honesty. Whether rebuilding after a breach of trust or rekindling warmth, Mrs M creates a respectful space to reconnect."
+            },
+            healing: {
+              title: "Self-Discovery & Inner Healing",
+              body: "Taking time to understand your own emotional patterns is one of the bravest gifts you can give yourself and those you love. Individual coaching with Mrs M helps you unpack past hurt and move forward grounded."
+            },
+            readiness: {
+              title: "Premarital Counselling & Marriage Evaluation",
+              body: "Strong marriages are built intentionally before the wedding day. Together with Mrs M, you will explore communication, finances, family expectations, and shared values with clarity."
+            }
+          },
+          urgMap: { 1: "Exploring / Proactive", 2: "Need Guidance Soon", 3: "Heavy / Urgent" }
+        },
+        zu: {
+          audMap: { myself: "Mina Ngedwa", relationship: "Ubudlelwano Bami", marriage: "Ukulungiselela Umshado" },
+          focMap: {
+            comm: {
+              title: "Ukuxhumana Nokuxazulula Izingxabano",
+              body: "Uma izingxoxo ziphenduka ukulimala noma ukuthula okubuhlungu, ukuba nomeluleki ongachemi kushintsha konke. U-Mrs M uyakusiza ukuthi uzwakale futhi wakhe indlela entsha yokukhuluma."
+            },
+            intimacy: {
+              title: "Ukusondelana Nokwethembana",
+              body: "Ukusondelana kwemizwa nothando kudinga ukuphepha nokwethembeka. U-Mrs M unikeza indawo ehloniphekile yokuvuselela uthando nokwethembana."
+            },
+            healing: {
+              title: "Ukuzazi Nokuphola Kwangaphakathi",
+              body: "Ukuzinika isikhathi sokuqonda imizwa yakho kuyisipho esikhulu kuwe nakwabaseduze nawe. U-Mrs M uyakusiza ukwelapha amanxeba adlule ukuze uqhubekele phambili ngokuthula."
+            },
+            readiness: {
+              title: "Ukwelulekwa Ngaphambi Komshado",
+              body: "Imishado eqinile yakhiwa ngamabomu ngaphambi kosuku lomshado. No-Mrs M, nizobheka ukuxhumana, izimali, umndeni, nezinhloso zekusasa."
+            }
+          },
+          urgMap: { 1: "Ngisafuna ukwazi kabanzi", 2: "Ngidinga iseluleko maduze", 3: "Kuyaphuthuma / Kuyasinda" }
+        }
+      };
+
+      const langPack = content[currentLang];
+      const focusItem = langPack.focMap[checkState.focus];
+      document.getElementById('resultHeading').textContent = focusItem.title;
+      document.getElementById('resultBody').textContent = focusItem.body;
+
+      const audLabel = langPack.audMap[checkState.audience];
+      const urgLabel = langPack.urgMap[checkState.urgency];
+      document.getElementById('resultSummaryLine').textContent =
+        currentLang === 'en'
+          ? `Focus: ${audLabel} • Priority: ${urgLabel}`
+          : `Okukhethiwe: ${audLabel} • Isimo: ${urgLabel}`;
+
+      const waMessage = currentLang === 'en'
+        ? `Sawubona Mrs M, I just completed the 30-Second Check-In on your website.\n• For: ${audLabel}\n• Focus: ${focusItem.title}\n• Urgency: ${urgLabel}\n\nI would love to arrange a session.`
+        : `Sawubona Mrs M, ngisanda kugcwalisa ukuzihlola kwemizuzwana engu-30 ku-website yakho.\n• Okwabani: ${audLabel}\n• Okudinga ukunakwa: ${focusItem.title}\n• Isimo: ${urgLabel}\n\nNgicela ukuhlela isikhathi sokubonana nawe.`;
+
+      document.getElementById('sendCheckinWhatsapp').href =
+        `https://wa.me/27844162803?text=${encodeURIComponent(waMessage)}`;
+    }
+
+    function resetCheckIn() {
+      document.getElementById('checkResult').classList.add('hidden');
+      document.getElementById('checkStep2').classList.add('hidden');
+      document.getElementById('checkStep3').classList.add('hidden');
+      document.getElementById('checkStep1').classList.remove('hidden');
+      document.getElementById('resetCheckinBtn').classList.add('hidden');
+      document.getElementById('progressBar').style.width = '33%';
+      document.getElementById('stepIndicator').textContent = translations[currentLang].step1Label;
+    }
+
+    /* 5. GALLERY LIGHTBOX */
+    function openGalleryLightbox(src, captionKey) {
+      const modal = document.getElementById('lightboxModal');
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxCaption').textContent = translations[currentLang][captionKey] || '';
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    function closeGalleryLightbox() {
+      const modal = document.getElementById('lightboxModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    /* 6. REVIEWS SLIDER CONTROLS */
+    const reviewsTrack = document.getElementById('reviewsTrack');
+    document.getElementById('nextReviewBtn').addEventListener('click', () => {
+      reviewsTrack.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+    document.getElementById('prevReviewBtn').addEventListener('click', () => {
+      reviewsTrack.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+
+    /* Initialize saved language on page load */
+    setLanguage(currentLang);
+  </script>
+</body>
+</html>
